@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, flash, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-
+import os
 from werkzeug.exceptions import abort
 
 from forms import RegistrationForm, LoginForm, PostForm
@@ -115,4 +115,5 @@ def delete_post(post_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, port=port)
