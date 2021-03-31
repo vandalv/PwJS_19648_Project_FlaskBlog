@@ -1,7 +1,8 @@
+import development as development
+import export as export
 from flask import Flask, render_template, url_for, flash, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import os
 from werkzeug.exceptions import abort
 
 from forms import RegistrationForm, LoginForm, PostForm
@@ -115,4 +116,5 @@ def delete_post(post_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)

@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+development/__init__.py
+development.egg-info/PKG-INFO
+development.egg-info/SOURCES.txt
+development.egg-info/dependency_links.txt
+development.egg-info/top_level.txt
