@@ -113,5 +113,6 @@ def delete_post(post_id):
     flash('Your post has been deleted!', 'success')
     return redirect(url_for('main'))
 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0')
