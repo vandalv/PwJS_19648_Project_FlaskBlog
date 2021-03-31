@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for i in posts %}
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="#">{{ i.author.username }}</a>
+      <small class="text-muted">{{ i.dateposted.strftime('%Y-%m-%d %H:%M') }}</small>
+    </div>
+    <p></p>
+    <h2><a class="article-title" href="#">{{ i.title }}</a></h2>
+    <p class="article-content">{{ i.content }}</p>
+    {% if i.author == current_user %}
+          <div>
+            <button type="button" small class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+          </div>
+        {% endif %}
+  </div>
+</article>
+ <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete Post?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form action="{{ url_for('delete_post', post_id=i.id) }}" method="POST">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+{% endblock %}
