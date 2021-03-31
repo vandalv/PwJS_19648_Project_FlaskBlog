@@ -41,6 +41,7 @@ class Post(db.Model):
         return f"Post('{self.title}', '{self.date_posted}')"
 
 
+@app.route('/')
 @app.route('/home')
 def main():
     posts = Post.query.order_by(Post.dateposted.desc())
