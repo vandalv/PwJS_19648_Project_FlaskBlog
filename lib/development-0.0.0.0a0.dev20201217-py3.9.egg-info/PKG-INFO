@@ -1,0 +1,16 @@
+Metadata-Version: 1.2
+Name: development
+Version: 0.0.0.0a0.dev20201217
+Summary: development
+Home-page:  
+Maintainer:  
+Maintainer-email:  
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: ~=3.6
